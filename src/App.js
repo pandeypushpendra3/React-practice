@@ -5,7 +5,7 @@ import {Crud} from "./crud/index";
 import {Update} from "./crud/Update";
 import {UseRef} from "./UseRef"
 import {Usememo} from "./Usememo"
-
+import {UseContext} from "./useContext";
 
 function App() {
 
@@ -26,6 +26,7 @@ return (
 <UseRef/>
 <h2>useMemo</h2>
 <Usememo/>
+<UseContext/>
 
 
 </>
