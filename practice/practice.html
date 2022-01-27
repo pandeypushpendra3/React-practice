@@ -1,0 +1,123 @@
+<! doctype html>
+<html>
+    <head>
+        <title>PRactice</title>
+        
+    </head>
+    <body>
+        
+<h1>jljljg &#8377 &copy 	&reg</h1>
+<audio style="width:800px" controls >
+    <source src= "../public/songs/1.mp3" >
+</audio>
+<div class="navbar-input">
+    <input type="text" placeholder="Search ..." id="search_Data" />
+    <span class="navbar-search">
+     
+        <button  onclick="debounce(main, 500)">search</button>
+    </span>
+   
+  </div>
+  
+
+  <select id ="select" onchange="handleClick()" value="genre">
+    Genre
+      <option value="hip-hop">Hip-Hop</option>
+      <option value="slow">Slow</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>      
+  </select>
+
+<select onclick="" value="Year">
+
+</select>
+
+    </body>
+
+
+<script>
+    
+handleClick=()=>{
+    
+    // var x = document.getElementById("select");
+    var x = document.getElementById('select');
+    // select.options[x.index].value
+var value = x.options[x.selectedIndex].value;
+console.log(value);
+
+  
+ 
+}
+
+
+
+// async function check(){
+//     let res= await fetch("http://localhost:3005/Album")
+//  let data = await res.json();
+//  console.log(data)
+
+// }
+// check()
+// var timerid;
+//  let pokemon_div = document.getElementById('pokemon')
+//  async function searchpokemon(n) {
+//      let res = await fetch(`http://localhost:3005/Album?q=${n}`)
+//      let data = await res.json();
+//     //  console.log(data);
+//        return data;
+
+
+
+//  }
+
+//  function appendPokemon(Pokemon) {//data 
+    
+//     //  pokemon_div.innerHTML = null
+//      Pokemon.forEach(({name}) => {
+        
+//          let p = document.createElement('p')
+//          p.innerText = name
+//          pokemon_div.append(p);
+//      });
+//  }
+
+//  async function main() {
+//      let name = document.getElementById("search_Data").value;//pikachu
+//      console.log(name)
+//      if (name.length < 1) {
+//          return false;
+//      }
+//      let pokemon = await searchpokemon(name);//pikachu//
+//      console.log(pokemon);
+//      if (pokemon=== undefined) {
+//          return false;
+//      }
+//      appendPokemon(pokemon);//data= id name img
+
+//  }
+
+//  function debounce(func, delay) {
+//      let name = document.getElementById("search_Data").value;
+//      if (name.length < 1) {
+//          return false;
+//      }
+//      if (timerid) {
+//          clearTimeout(timerid);
+//      }
+
+//      timerid = setTimeout(() => {
+//          func();
+//      }, delay)
+//      name.innerHTML=""
+//  }
+
+
+
+    </script>
+</html>

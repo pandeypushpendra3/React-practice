@@ -1,51 +1,43 @@
-import {React,useState} from "react"
-
-// import './App.css';
-import {Expenses} from "./components/Expenses";
-import {NewExpenses} from "./components/NewExpenses"
-let Dummy_Expense =[{
-  id:"e1",
-  title:"school Fee",
-  amount:250,
-  date:new Date(2022,1,1)
-},
-{
-  id:"e2",
-  title:"Books",
-  amount:230,
-  date:new Date(2021,12,12)
-},
-
-{
-id:"e3",
-title:"Basket",
-amount:200,
-date:new Date(2021,12,2)
-}
-,
-{
-  id:"e2",
-  title:"Books",
-  amount:230,
-  date:new Date(2021,12,12)
-},];
+import {React} from "react"
+import "./app.css";
+import {Switch ,Route} from "react-router-dom";
+import {Crud} from "./crud/index";
+import {Update} from "./crud/Update";
+import {UseRef} from "./UseRef"
+import {Usememo} from "./Usememo"
 
 
 function App() {
 
-const [expenses,setExpenses]= useState(Dummy_Expense)
-const addExpenseHandler=
-(expense)=>{
-  const updatedExpense=[expense,...expenses];
-  setExpenses(updatedExpense)
-} 
 
 return (
-<div>
-     <NewExpenses onAddExpense={addExpenseHandler} />
-     <Expenses item ={expenses}/>
-    </div>
-  );
-}
+
+<>
+{/* <h3>Crud with json server</h3> */}
+{/* <Switch>
+
+<Route exact path ="/" component={Crud} />
+<Route exact path ="/update/:id" component={Update} />
+</Switch> */} 
+{/* //for crud file opening practice with json-server */}
+
+<div>Hello</div>
+<h1>useRef</h1>
+<UseRef/>
+<h2>useMemo</h2>
+<Usememo/>
+
+
+</>
+)}
+
+
+
+
+
+
+
+
+
 
 export default App;
