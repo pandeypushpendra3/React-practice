@@ -1,57 +1,59 @@
-var arr = [9,4,7,6,3,1,5];
-var n =7;
-var l =0;
-var r = n-1;
+function divide(arr,start,end){
+    if(start>=end){
+        return ;
+    }
+    let mid =start+Math.floor((end-start)/2)
 
 
+    divide(arr,start,mid);
+    divide(arr,mid+1,end);
 
-function mergesort(a,l,r){
-    if(l<r){
-        var mid = Math.floor((l+r)/2);
-    
-        mergesort(a,l,mid);
-        mergesort(a,mid+1,r);
-        merge(a,l,mid,r);
-    }
-    
-    }
-function merge(a,l,mid,r){
-    var i =l; var j =mid+1;
-    var b =[];
-var k = l;
-while (i<=mid && j<=r){
-    if(a[i]<a[j]){
-        b[k]=a[i]
-        i++;
-    }
-    else{
-        b[k]= a[j];
-        j++;
-    }
-}
-k++;
-
-if(i>mid){
-    while(j<=r){
-        b[k]= a[j];
-        k++;
-        j++;
-
-    }
+    mergeArr(arr,start,mid,end)
 }
 
-else{
-    while(i<=mid){
-        b[k]= a[i];
-        k++;
-        i++;
-    }
-}
- for(k=l;k<r;k++){
-     a[k]= b[k];
+function mergeArr(arr,start,mid,end){
+  let merge=[]
+  
+  let i=start;
+  let j=mid+1;
+
+  let k=0;
+ 
+  while(i<=mid && j<=end){
+      if(arr[i]<=arr[j]){
+          merge[k]=arr[i]
+          i++;
+          k++;
+      }
+      else{
+          merge[k]=arr[j]
+          j++;
+          k++
+      }
+  }
+ while(i<=mid){
+  merge[k]=arr[i]
+  k++;
+  i++;
  }
- console.log(a)
+ while(j<=end){
+  merge[k]=arr[j]
+  j++;
+  k++;
+ }
+for(m=0,n=start;m<merge.length;m++,n++){
+    arr[n]=merge[m]
 }
 
 
-    (mergesort(arr,l,r));
+}
+
+
+let arr=[5,2,6,3,9,1,7]
+let n=arr.length;
+divide(arr,0,n-1);
+
+
+for(let z=0;z<arr.length;z++){
+  console.log(arr[z]);
+}
