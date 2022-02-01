@@ -7,7 +7,8 @@ import { setProducts } from './redux/actions/productAction';
 
 
 export const Product = () => {
-const products = useSelector((state)=>state)
+const products = useSelector((state)=>state)//afte dispatch the data we getting the data ffrom use selector
+
 const dispatch = useDispatch();
 const fetchProducts= async ()=>{
 const res = await axios.get("https://fakestoreapi.com/products")
@@ -15,7 +16,7 @@ const res = await axios.get("https://fakestoreapi.com/products")
     console.log(err)
 })
 console.log(res.data)
-dispatch(setProducts(res.data));
+dispatch(setProducts(res.data));//dispatch the data into action
 }
 useEffect(()=>{
     fetchProducts();

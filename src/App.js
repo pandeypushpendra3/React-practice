@@ -1,4 +1,4 @@
-import {React} from "react"
+import {React,useState} from "react"
 import "./app.css";
 import {  Switch ,Route} from "react-router-dom";
 import {Crud} from "./crud/index";
@@ -10,9 +10,46 @@ import {ReactReducer } from "./ReactReducer";
 import { Header } from "./containers/Header";
 import { Product } from "./containers/Product";
 import { ProductDetail } from "./containers/ProductDetail";
+import {First} from "./components/First"
 
-
+import {createContext} from "react";
+const AppContext = createContext();
+// console.log(AppContext);
 function App() {
+// const [counter,setCounter] = useState(0);
+// const increment=()=>{
+// setCounter(counter+1);
+// }
+// const decrement=()=>{
+//     setCounter(counter-1);
+//         console.log(counter)}
+// const renderCounter =()=>{
+//     if(counter>=10){
+//         return (
+//             <>
+//             <button onClick={decrement}>-</button>
+//                 </>
+//         )
+//     }
+// else  {
+//         return (
+//             <>
+//                 <button onClick={increment}>+</button>
+//             </>
+//         )
+//     }
+   
+// }
+// const reset=()=>{
+//     if(counter==10)
+//     return (
+//             <>
+//             <button onClick={()=>setCounter(0)}>reset</button>
+//                 </>
+//         )
+// }
+const [age,setAge] = useState(10);
+
 return (
 
 <>
@@ -33,21 +70,25 @@ return (
 {/* react hooks practice  */}
 {/* <ReactReducer/> */}
 {/* <h1>Redux-shop</h1> */}
-
+{/* 
 <Header/>
 <Switch>
 <Route  path="/" exact component={Product}/>
 <Route  path="/product/:productid"  component={ProductDetail}/>
 <Route>404 Not found</Route>
-</Switch>
+</Switch> */}
+{/* {/* <div>{counter}</div>
+<div style={{background:"black"}}>{renderCounter()}{reset()}</div> */}  
 
 
-
-
-
-
+      <div>
+          Hello Your age is:{age}
+          <First />
+      </div>
 </>
-)}
+
+)
+}
 
 
 
