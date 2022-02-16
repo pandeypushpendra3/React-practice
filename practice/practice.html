@@ -1,4 +1,4 @@
-<! doctype html>
+<!-- <! doctype html>
 <html>
     <head>
         <title>PRactice</title>
@@ -54,6 +54,100 @@ console.log(value);
   
  
 }
+
+//app js 
+
+const {token,handleTokenChange} = useContext(AuthContext)
+// const [counter,setCounter] = useState(0);
+// const increment=()=>{
+// setCounter(counter+1);
+// }
+// const decrement=()=>{
+//     setCounter(counter-1);
+//         console.log(counter)}
+// const renderCounter =()=>{
+//     if(counter>=10){
+//         return (
+//             <>
+//             <button onClick={decrement}>-</button>
+//                 </>
+//         )
+//     }
+// else  {
+//         return (
+//             <>
+//                 <button onClick={increment}>+</button>
+//             </>
+//         )
+//     }
+   
+// }
+// const reset=()=>{
+//     if(counter==10)
+//     return (
+//             <>
+//             <button onClick={()=>setCounter(0)}>reset</button>
+//                 </>
+//         )
+// }
+const [age,setAge] = useState(10);
+if(!token){
+return (
+  <div>
+    <h4>User not logged in.Please login to continue</h4>
+  <input type="text"/>
+  <input type="password"/>
+  <button onClick={()=>{handleTokenChange("kdfsjljgls")}}>Submit</button>
+  
+  </div>
+)
+}
+return (
+
+<>
+
+
+
+
+
+{/* <h3>Crud with json server</h3> */}
+{/* <Switch>
+
+<Route exact path ="/" component={Crud} />
+<Route exact path ="/update/:id" component={Update} />
+</Switch> */} 
+{/* //for crud file opening practice with json-server */}
+
+{/* <div>Hello</div>
+<h1>useRef</h1>
+<UseRef/>
+<h2>useMemo</h2>
+<Usememo/>
+<UseContext/> */}
+{/* react hooks practice  */}
+{/* <ReactReducer/> */}
+{/* <h1>Redux-shop</h1> */}
+{/* 
+<Header/>
+<Switch>
+<Route  path="/" exact component={Product}/>
+<Route  path="/product/:productid"  component={ProductDetail}/>
+<Route>404 Not found</Route>
+</Switch> */}
+{/* {/* <div>{counter}</div>
+<div style={{background:"black"}}>{renderCounter()}{reset()}</div> */}  
+
+
+      <div>
+          Hello Your age is:{age}
+          <First />
+      </div>
+</>
+
+)
+}
+
+
 
 
 
@@ -120,4 +214,4 @@ console.log(value);
 
 
     </script>
-</html>
+</html> -->

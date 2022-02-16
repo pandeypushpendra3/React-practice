@@ -1,6 +1,6 @@
-import {React,useState} from "react"
+import {React,useState,useEffect} from "react"
 import "./app.css";
-import {  Switch ,Route} from "react-router-dom";
+import {  Link,Switch ,Route} from "react-router-dom";
 import {Crud} from "./crud/index";
 import {Update} from "./crud/Update";
 import {UseRef} from "./UseRef"
@@ -11,86 +11,109 @@ import { Header } from "./containers/Header";
 import { Product } from "./containers/Product";
 import { ProductDetail } from "./containers/ProductDetail";
 import {First} from "./components/First"
-
-import {createContext} from "react";
-const AppContext = createContext();
+import { AuthContext } from "./AuthContext";
+import {useContext} from "react";
+import { Homepage } from "./components/Homepage";
+import { Aboutpage } from "./components/Aboutpage";
+import { ContactUs } from "./components/ContactUs";
+import { Users } from "./components/Users";
+import {UserDetails} from "./components/UserDetails";
+// const AppContext = createContext();
 // console.log(AppContext);
+import {Login} from "./components/Login";
 function App() {
-// const [counter,setCounter] = useState(0);
-// const increment=()=>{
-// setCounter(counter+1);
+//   const [name,setName]= useState("")
+// const[movie,setMovie] = useState([]);
+// const[loading,setLoading]= useState(true);
+//     const getData= async ()=>{
+//       if(name.length>=5 || name.length<4 || name[0] <0 || name[0] >2){
+//       console.log(name)
+//         setLoading(false)
+
+//       }
+//       else if(name.length=== 4 || 
+//         name[0] >=1 ||name[0]==2  ||name[1]==0||name[1]==9){
+          
+//         const res = await fetch(`https://jsonmock.hackerrank.com/api/movies?Year=${name}`);
+//         const d = await res.json();
+//         console.log(d.data ) ;
+//         setLoading(true)
+//         setMovie(d.data);
+//       }
+//       // else if(){
+//       //   setLoading(false)
+//       // }
+
+       
+//       //  render();
 // }
-// const decrement=()=>{
-//     setCounter(counter-1);
-//         console.log(counter)}
-// const renderCounter =()=>{
-//     if(counter>=10){
-//         return (
-//             <>
-//             <button onClick={decrement}>-</button>
-//                 </>
-//         )
-//     }
-// else  {
-//         return (
-//             <>
-//                 <button onClick={increment}>+</button>
-//             </>
-//         )
-//     }
-   
-// }
-// const reset=()=>{
-//     if(counter==10)
-//     return (
-//             <>
-//             <button onClick={()=>setCounter(0)}>reset</button>
-//                 </>
-//         )
-// }
-const [age,setAge] = useState(10);
-
-return (
-
-<>
-{/* <h3>Crud with json server</h3> */}
-{/* <Switch>
-
-<Route exact path ="/" component={Crud} />
-<Route exact path ="/update/:id" component={Update} />
-</Switch> */} 
-{/* //for crud file opening practice with json-server */}
-
-{/* <div>Hello</div>
-<h1>useRef</h1>
-<UseRef/>
-<h2>useMemo</h2>
-<Usememo/>
-<UseContext/> */}
-{/* react hooks practice  */}
-{/* <ReactReducer/> */}
-{/* <h1>Redux-shop</h1> */}
-{/* 
-<Header/>
-<Switch>
-<Route  path="/" exact component={Product}/>
-<Route  path="/product/:productid"  component={ProductDetail}/>
-<Route>404 Not found</Route>
-</Switch> */}
-{/* {/* <div>{counter}</div>
-<div style={{background:"black"}}>{renderCounter()}{reset()}</div> */}  
+//     useEffect(()=>{
+// getData();
+// setLoading(true)
+// // setName("")
+//     },[])
+//     // const render=()=>{
+     
+//     // }
 
 
-      <div>
-          Hello Your age is:{age}
-          <First />
-      </div>
-</>
+  return(
+    <div style={{margin:"auto",width:"500px",height:"500px",border:"1px solid black"}}>
+  {/* <div  style={{margin:"auto",width:"500px",height:"50px",border:"1px solid black","display":"flex",justifyContent:"space-around"}} >
+     <Link to="/">Home</Link>
+     <Link to="/about">About</Link>
+     <Link to="/contact">Contact us</Link>
+     <Link to="/users">Users</Link>
+     <Link to="/login">Login</Link>
 
-)
+   </div>
+
+       <Route exact path="/" >
+       <Homepage/></Route>
+                         
+       <Route path="/about" >
+       <Aboutpage/></Route>
+       <Route path="/contact" >
+       <ContactUs/></Route>  
+
+  <Route path="/users" >
+  <Users /></Route> 
+
+  <Route  path="/user/:id">
+  <UserDetails/>
+  </Route>   
+
+  <Route path="/login">
+<Login/>
+  </Route> */}
+{/* {/* <input type="number" value={name} placeholder="Enter year" onChange={(e)=>setName(e.target.value)}/>
+<button onClick={getData} >Search</button>
+     <div>
+       { loading?( movie.map((e,i)=>{
+         console.log(movie)
+        
+          return (
+            <div key={i}>
+            <h3>{e.Title}</h3>
+            {/* <h2>{e.length}</h2> */}
+          {/* </div> */}
+          {/* ) */}
+         
+        
+       
+      {/* //  })):( */}
+         {/* <> */}
+          {/* //  <div>Result not found</div> */}
+         {/* </> */}
+      {/* //  ) */}
+     {/* </div> */}
+     
+     
+     
+     
+     </div>
+  )
 }
-
-
 
 
 

@@ -7,15 +7,17 @@ import {BrowserRouter } from "react-router-dom"
 import {Provider} from "react-redux";
 import {store} from "./containers/redux/store/store";
 import {AppContextProvider} from "./ApiContext"
-
+import {AuthContextProvider} from "./AuthContext"
 ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>
-  <AppContextProvider >
+  <AuthContextProvider>
+  {/* <AppContextProvider > */}
   {/* <Provider store={store} > */}
    <App />
    {/* </Provider> */}
-   </AppContextProvider>
+   {/* </AppContextProvider> */}
+   </AuthContextProvider>
   </BrowserRouter>
    </React.StrictMode>,
   document.getElementById('root')

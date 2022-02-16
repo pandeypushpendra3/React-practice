@@ -1,11 +1,13 @@
-import {createContext} from "react";
+import {React,useState,createContext} from "react";
 
-const AppContext = createContext();
-console.log(AppContext);
+export const AppContext = createContext();
+// console.log(AppContext);
 
 export const AppContextProvider =({children})=>{
+
+    const [state,setState] = useState("")
     return (
-        <AppContext.Provider value="test">
+        <AppContext.Provider value={{state}}>
             {children}
         </AppContext.Provider>
     )};
